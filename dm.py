@@ -18,7 +18,7 @@ def danmu_fn(msg):
     print(msg['Content'])
     with open('1.txt','ab') as f:
         dm_text = str(msg['Content'].encode('utf-8'))
-        f.write(dm_text)
+        f.write(str(dm_text))
         f.close()
 
 
