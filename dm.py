@@ -1,7 +1,6 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import time, sys
+import time,sys
 
 from danmu import DanMuClient
 
@@ -14,11 +13,10 @@ if not dmc.isValid(): print('Url not valid')
 
 @dmc.danmu
 def danmu_fn(msg):
-    #pp('[%s] %s' % (msg['NickName'], msg['Content']))
     print(msg['Content'])
     with open('1.txt','ab') as f:
-        dm_text = str(msg['Content'].encode('utf-8'))
-        f.write(str(dm_text))
+        dm_text = msg['Content']
+        f.write(dm_text.encode('utf-8'))
         f.close()
 
 
